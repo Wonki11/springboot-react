@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0/EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<settings>
+		<!-- mybatis에서 null 값을 처리하는 방법을 지정하는 설정
+			DB나 Java에서 가져오는 값이 null일 때 이것을 어떻게 처리할 것인가 ?
+		 -->
+		<setting name="jdbcTypeForNull" value="NULL"/>
+	</settings>
+</configuration>
+
