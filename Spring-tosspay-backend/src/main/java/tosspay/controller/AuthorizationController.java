@@ -23,7 +23,7 @@ public class AuthorizationController {
 	// @Value ("${application.propertise에 작성한 변수명 작성}")
 	// lombok 아님
 	// org.springframework.beans.factory.annotation.Value;
-	@Value("${apiSecretKey")
+	@Value("${apiSecretKey}")
 	private String apiSecretKey; // 가져온 값을 담을 변수그릇 설정
 	
 	// HTTP 요청을 보내기 위해서 요청 보내는 것을 담을 공간 생성
