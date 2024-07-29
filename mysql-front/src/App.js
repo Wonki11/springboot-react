@@ -86,26 +86,30 @@ function App() {
   /*****유저 삭제 버튼 */
   const deleteUser = async (id) => {
     /**
-     * "" ''  = 모두 글자 취급
-     * ``     = 글자 안에 특정 값을 변수명으로 취급해야할 때 사용
-     *          ``안에서 변수명을 처리해야하는 값은 ${} 사용한다음
-     *          ${융통성있게 변경되어야하는 변수명} 작성 
-     *  ``
-      http://localhost:3000/users?id=3
-        ""  ''
+     "" ''  = 모두 글자 취급
+     ``     = 글자 안에 특정 값을 변수명으로 취급해야할 때 사용
+              `` 안에서 변수명을 처리해야하는 값은 ${} 사용한다음
+              ${융통성있게 변경되어야하는 변수명} 작성
+    예시
+      ""  ''
       http://localhost:3000/users?id=${id}
+      ``
+      http://localhost:3000/users?id=3
      */
     await axios.delete(`/users?id=${id}`);
-    /*
-    자바 컨트롤러에서 @DeleteMapping("/{id}") 매개변수 = 파라미터에 (@PathVariable int id) 작성
-    리액트 axios에서 id=${id} 이다.
-    나중에 주소값에 id 대신 삭제할 번호가 들어갈 ㅅ 있도록 설정
 
-    자바 컨트롤러에서 @DeleteMapping() 에 특정 id값을 설정하지 않을 경우
-    매개변수 = 파라미터에 (@RequestParam(value="id") int id) // (value="id") = 프론트엔드에서 가져온 id값
-    params : {id}
-    await axios.delete(`/users`,{params: {id}});
-    */
+    /**
+     * 자바 컨트롤러에서 @DeleteMapping("/{id}") 매개변수 = 파라미터에 (@PathVariable int id) 작성
+     * 리액트  axios에서 id=${id} 이다.  
+     * await axios.delete(`/users?id=${id}`); 
+     * 나중에 주소값에 id 대신 삭제할 번호가 들어갈 수 있도록 설정
+     * 
+     * 자바 컨트롤러에서 @DeleteMapping() 에 특정 id값을 설정하지 않을 경우
+     * 매개변수 = 파라미터에 (@RequestParam(value="id") int id) //(value="id") = 프론트엔드에서 가져온 id값
+     * params: {id}
+     * await axios.delete(`/users`,{params: {id} });
+
+     */
 
 
     /**
