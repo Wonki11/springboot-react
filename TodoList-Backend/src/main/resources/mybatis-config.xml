@@ -13,6 +13,9 @@
 			  DB에  언더스코어로 작성된 값을 java에서 카멜케이스로 표기하겠다 선언
 		 -->
 		<setting name="mapUnderscoreToCamelCase" value="true"/>
+		
+		
+		
 	</settings>
 </configuration>
 

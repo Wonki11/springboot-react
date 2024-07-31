@@ -75,6 +75,8 @@ function App() {
     setUsers(res.data);
   };
 
+
+
   /***********유저 추가 버튼 */
   // async await 사용해서 유저 추가하기 addUser에서 가져온 user 한 명을 넣어주기
   const addUser = async (user) => {
@@ -134,6 +136,7 @@ function App() {
     setUsers(users.map(u => (u.id === user.id ? user : u)));
     // 수정한 유저의 id값이 일치하는지 확인하고, id값이 일치하지 않다면 기존에 있던 유저 정보로 수정하지 않고 전달
   }
+  
 
   /********유저 수정을 완료하면 유저 목록에 수정된 유저를 전달 */
   const editUser = (user) => {
