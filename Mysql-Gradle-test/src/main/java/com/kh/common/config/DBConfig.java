@@ -75,4 +75,27 @@ public class DBConfig {
 		// insert delete update commit을 하지 않으면 완벽하게 저장이 안된 상태에서 select 를 진행하기 때문에
 		// 저장을 안해서 안보이는 상황이라 여기지 않고, 코드 상이나 흐름에 문제가 있다고 생각할 수 있기 때문에 commit 진행 매니저 생성
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }

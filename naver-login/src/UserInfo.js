@@ -60,6 +60,12 @@ function UserInfo() {
         <div>
             <input type="text" value={userInfo.response.id} disabled /> 
             <input type="email" value={userInfo.response.email} disabled/>
+            <input type="text" value={userInfo.response.name} disabled/>
+            <input type="text" value={userInfo.response.gender === 'M'? ('남'):('여')} disabled/>
+            <img src={userInfo.response.profile_image} disabled/>
+            <input type="text" value={userInfo.response.birthday} disabled/>
+           
+
             {/* 네이버에서 가져온 id 값을 input에 넣어주고 수정하지 못하게 막음처리 */}
 
         </div> 
