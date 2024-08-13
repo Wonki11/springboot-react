@@ -15,10 +15,11 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 /*
  * 24-07-31
+ * 리액트와 네이버로그인과 최종 연동되는 컨트롤러
  *
  * */
 @RestController
-public class NaverRegistController {
+public class NaverAPIController {
 	
 	@Value("${naver.client-id}")
 	private String clientId;

@@ -13,6 +13,7 @@ import org.springframework.web.multipart.MultipartFile;
 import com.kh.dto.Post;
 import com.kh.service.PostService;
 
+
 @RestController
 public class PostController {
 	
