@@ -16,7 +16,23 @@ public class LoginController {
 	@Autowired
 	private LoginService loginService;
 	
+	/*
+	 * 로그인 했을 대
+	 * 로그인 값이 있으면 왜 total : 1
+	 * 로그인 값이 없으면 왜 total : 0
+	 * ==> Preparing : SELECT id, email, nickname, name, profile_image
+	 * 
+	 * 
+	 * 
+	 * 
+	 * 
+	 * 
+	 * */
+	
+	
+	
 	@PostMapping("/login")
+	// login @requestParam -> @requestBody Map<String,String> loginData
 	public ResponseEntity<String> login(@RequestParam("id") String id, @RequestParam("password") String password) {
 		NaverUser user = loginService.login(id, password);
 		if (user != null) { //유저정보가 존재하면 null 아닐 것
