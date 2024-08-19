@@ -9,6 +9,27 @@ const AddressSearch = () => {
   //백엔드 api url 주소를 /api/addUser 로 Restful 연결을 하려한다.
   // Restful 연결 = 자바 컨트롤러로 연결해서 DB에 값 넣는다.
   // 1. fetch 버전 async await 안씀
+  const saveFetch = () => {
+    fetch("http://localhost:8080/api/addUser" ,{
+        method: "POST",
+        headers: { 'Content-Type' : 'multipart/최종주소'},
+        body:JSON.stringify({address:최종주소}),
+    })
+    //데이터 넣기 성공했을 때 보여줄 것
+    .then(response => response.json())
+  }
+
+  const saveAxios = () => {
+    fetch("http://localhost:8080/api/addUser" ,{address:최종주소})
+       
+    //데이터 넣기 성공했을 때 보여줄 것
+    .then(response => response.json())
+  }
+    
+
+    axios.post("", 최종주소, {
+        Headers : {'Content-Type' : 'multipart/최종주소' },
+    })
   
 
   //주소검색을 완료하고 사용자가 검색한 데이터를 가져와서 기능 실행하기
