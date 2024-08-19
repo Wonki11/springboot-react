@@ -17,35 +17,32 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class APISController {
 	// 3번
-	@GetMapping("/getCtprvnRltmMesureDnsty") // 시도별 실시간 측정 정보 조회 api 주소
-	public String get실시간측정정보() {
-		return "측정결과전달하기";
-	}
-	
-	// 1번과 2번 return 측정결과 전달하기
-	// 4번과 5번 void sysout("측정 결과 전달하기")
-	// 1. GetMapping 주소로 측정소별 실시간 측정정보 조회
-	@GetMapping("/getUnityAirEnvrnIdexSnstiveAboveMsrstnList") // \특수문자 특수문자를 글자취급
-	public String  get통합대기환경지수() {
-		return "측정결과전달하기";
-	}
-	
-	// 2. 통합대기환경지수 나쁨이상 측정소 목록조회
-	@GetMapping("/getCtprvnRltmMesureDnsty")
-	public String get시도별실시간측정정보() {
-		return "측정결과전달하기";
-	}
-	
-	// 4. 대기질 예보통보 조회
-	@GetMapping("/getMinuDustFrcstDspth")
-	public void 예보통보조회() {
-		System.out.println("측정결과전달하기");
-	}
-	
-	// 5. 미세먼지 주간예보 조회
-	@GetMapping("/getMinuDustWeekFrcstDspth")
-	public void 미세먼지주간예보조회() {
-		System.out.println("측정결과전달하기");
-}
+		@GetMapping("/getCtprvnRltmMesureDnsty") // 시도별 실시간 측정 정보 조회 api 주소
+		public String get실시간측정정보() {
+			return "측정결과전달하기";
+		}
+		// 1번과 2번 return 측정 결과 전달하기
+		// 4번과 5번 void system.out.println("측정 결과 전달하기")
+		
+		// 1. GetMapping 주소로 측정소별 실시간 측정정보 조회
+		@GetMapping("/getMsrstnAcctoRltmMesureDnsty")
+		public String get주소로측정하기() {
+			return "측정결과전달하기";
+		}
+		// 2. 통합대기환경지수 나쁨이상 축정소 목록조회
+		@GetMapping("/getUnityAirEnvrnIdexSnstiveAboveMsrstnList")
+		public String get니쁨측정소목록조회() {
+			return "측정결과전달하기";
+		}
+		// 4. 대기질 예보통보 조회
+		@GetMapping("/getMinuDustFrcstDspth")
+		public void 예보통보조회() {
+			System.out.println("측정 결과 전달하기");
+		}
+		// 5. 미세먼지 주간예보 조회
+		@GetMapping("/getMinuDustWeekFrcstDspth	")
+		public void 주간예보조회() {
+			System.out.println("측정 결과 전달하기");
+		}
 	
 }
