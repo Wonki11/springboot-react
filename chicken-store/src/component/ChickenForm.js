@@ -23,8 +23,20 @@ const ChickenForm = () => {
         })
         ;
     }
+
+    const 삭제버튼 = () => {
+        axios.delete("http://localhost:8080/api/chicken", 전달데이터)
+        .then((response) => {
+            alert("삭제되었습니다.")
+        })
+        .catch((e)=>{
+            alert("메뉴 삭제 실패")
+        })
+    }
     return(
+        
         <div className="chickenform-container">
+ 
             <laber>메뉴 이름 : 
                 <input type="text" value={chickenName} onChange={(e) => setChickenName(e.target.value)}/>
 
@@ -37,8 +49,9 @@ const ChickenForm = () => {
                 <input type="number" value={price} onChange={(e)=> setPrice(e.target.value)} />
 
             </label>
-            <button onClick={제출버튼}>등록하기</button>
+            <button>메뉴 등록하기</button>
             <button>메인으로 돌아가기</button>
+            <button onClick={삭제버튼}>메뉴삭제</button>
         </div>
     )
 }
