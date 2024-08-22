@@ -3,6 +3,7 @@ package com.kh.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -12,6 +13,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.kh.dto.Chicken;
 import com.kh.service.ChickenService;
+import org.springframework.web.bind.annotation.PutMapping;
+
 
 
 @RestController
@@ -27,13 +30,26 @@ public class ChickenController {
 		return chickenService.getallChickens();
 	}
 	
-	@GetMapping("{id}")
-	public Chicken getchickenById(@PathVariable Integer id) {
-		return chickenService.findById(id);
-	}
-	
 	@PostMapping
 	public Chicken saveChicken(@RequestBody Chicken chicken) {
 		return chickenService.createChicken(chicken);
+	}
+	
+	@GetMapping("{id}")
+	public Chicken getchickenById(@PathVariable("id") Integer id) {
+		return chickenService.findById(id);
+	}
+	
+	/*1. 수정된 컬럼 아이디 가져오기, 
+	 *2. 수정된 내용 저장하기*/
+	@PutMapping("{id}")//		@PathVariable: 주소창 / 뒤에있는 id 숫자값
+	public Chicken updateChicken(@PathVariable("id") Integer id, @RequestBody Chicken chicken) {
+		System.out.println("chicken data : " + chicken);
+		return chickenService.updateChicken(id, chicken);	
+		
+	}
+	@DeleteMapping("{id}")
+	public void deleteChicken(@PathVariable("id") Integer id) {
+		chickenService.deleteChicken(id);
 	}
 }
