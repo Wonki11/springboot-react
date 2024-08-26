@@ -66,10 +66,11 @@ const ChickenDetail = () => {
         setIsEditing(false);
     }
     const handle삭제하기 = () => {
-        axios.delete(`http:/localhost:8080/api/chicken/${id}`)
+        axios.delete(`http://localhost:8080/api/chicken/${id}`)
         .then(() => {
             alert("삭제 완료")
-            Navigate("/"); //삭제하고 메인으로 이동
+            navigate("/"); //삭제하고 메인으로 이동
+            
         })
         .catch(error => {
             console.log("삭제하는데 문제가 발생");
